@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </main>
+
+        <div class="posts">
+          {% for post in site.posts %}
+            <div class="col-sm-4 padding-boxe">
+            <a href="{{ site.baseurl }}{{ post.url }}">
+            <!--  <div class="card-post">
+                <h3 class="post-title">
+                  {{ post.title }}
+                </h3>
+                <span class="post-date">{{ post.date | date_to_string }}</span>
+              </div>-->
+            </a>
+            </div>
+            {% endfor %}
+          </div>
+
+        {%- include footer.html -%}
+          </body>
+
+</html>
